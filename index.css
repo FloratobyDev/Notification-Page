@@ -5,58 +5,198 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: hsl(210deg, 60%, 98%);
+}
+
+div {
+  display: inline-block;
 }
 
 .container {
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 20px;
+  padding: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
+  width: 40%;
 }
-
-.notif-header {
+.container .notif-header {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 20px 15px;
+}
+.container .notif-header .notif-title-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.container .notif-header .notif-title-counter h1 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+.container .notif-header .notif-title-counter span {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  border-radius: 4px;
+  background-color: hsl(219deg, 85%, 26%);
+  color: white;
+  font-size: 14px;
+  padding: 1px 10px;
+}
+.container .notif-header p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.container .notif-container {
+  display: flex;
+  flex-direction: column;
+  align-items: none;
+  justify-content: center;
+}
+.container .notif-container .notif {
+  display: flex;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 4px 20px;
   justify-content: space-between;
   align-items: center;
 }
-.notif-header .notif-title-counter {
+.container .notif-container .notif .commented-picture {
+  display: inline-block;
+  width: 50px;
+  margin-left: 10px;
+}
+.container .notif-container .notif .commented-picture:hover {
+  border-radius: 8px;
+  pointer-events: fill;
+  box-shadow: 0 0 10px 4px lightgray;
+}
+.container .notif-container .notif .another-container {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 30px;
 }
-.notif-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.notif-container .notif {
-  display: flex;
-}
-.notif-container .notif .user-profile {
+.container .notif-container .notif .another-container .user-profile {
+  pointer-events: none;
   align-self: center;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
 }
-.notif-container .notif .notif-info .name-description {
-  display: flex;
+.container .notif-container .notif .another-container .notif-info {
+  margin-left: 10px;
+  pointer-events: none;
+}
+.container .notif-container .notif .another-container .notif-info .name-description .name {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+.container .notif-container .notif .another-container .notif-info .name-description .dot {
   align-items: center;
+  background-color: red;
+  border-radius: 100px;
+  width: 9px;
+  height: 9px;
+  margin-left: 5px;
 }
-.notif-container .notif .notif-info .name-description .name {
+.container .notif-container .notif .another-container .notif-info .name-description .post-desc {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: hsl(219deg, 12%, 42%);
+}
+.container .notif-container .notif .another-container .notif-info .name-description .post-desc .club {
+  pointer-events: fill;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+}
+.container .notif-container .notif .another-container .notif-info .name-description .post-desc .strat {
+  font-weight: bold;
+}
+.container .notif-container .notif .another-container .notif-info .name-description .post-desc .club:hover {
+  color: hsl(219deg, 85%, 26%);
+}
+.container .notif-container .notif .another-container .notif-info .message {
+  pointer-events: fill;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  width: 85%;
+  border-radius: 8px;
+  border: 1px solid lightgrey;
+  padding: 12px 8px;
+}
+.container .notif-container .notif .another-container .notif-info .message:hover {
+  cursor: pointer;
+  background-color: hsl(205deg, 33%, 90%);
+}
+@media (max-width: 500px) {
+  .container .notif-container .notif .another-container .notif-info .message {
+    width: 100%;
+  }
+}
+.container .notif-container .notif .another-container .notif-info .post-duration {
+  color: hsl(219deg, 12%, 42%);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 300;
+  font-size: 11px;
   margin: 0;
   padding: 0;
 }
-.notif-container .notif .notif-info .post-duration {
-  margin: 0;
-  padding: 0;
+.container .notif-unread {
+  background: hsl(211deg, 68%, 94%);
+}
+.container .element-hover {
+  pointer-events: fill;
+  cursor: pointer;
+  font-weight: bold;
+}
+.container .element-hover:hover {
+  color: blue;
 }
 
-.notif-read {
-  background: grey;
-}
-
-.notif-unread {
-  background: pink;
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    height: 100vh;
+  }
+  .container .notif-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+  }
+  .container .notif-header .notif-title-counter {
+    gap: 4px;
+  }
+  .container .notif-header .notif-title-counter h1 {
+    font-size: 18px;
+  }
+  .container .notif-header .notif-title-counter span {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .container .notif-header .notif-title-counter p {
+    font-size: 8px;
+  }
+  .container .notif-container .notif .commented-picture {
+    width: 35px;
+    height: 35px;
+  }
 }/*# sourceMappingURL=index.css.map */

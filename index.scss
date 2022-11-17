@@ -1,101 +1,271 @@
-*{
+$White: hsl(0, 0%, 100%);
+$Verylightgrayishblue: hsl(210, 60%, 98%);
+$Lightgrayishblue1: hsl(211, 68%, 94%);
+$Lightgrayishblue2: hsl(205, 33%, 90%);
+$Grayishblue: hsl(219, 14%, 63%);
+$Darkgrayishblue: hsl(219, 12%, 42%);
+$Verydarkblue: hsl(224, 21%, 14%);
+$Red: hsl(1, 90%, 64%);
+$Blue: hsl(219, 85%, 26%);
+
+@mixin jakartaFont($weight) {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: $weight;
+}
+
+
+@mixin flex-default($flex-direction, $aic, $jcc) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $aic;
+    justify-content: $jcc;
+}
+
+* {
     box-sizing: border-box;
 }
 
-body{
-  margin: 0;
-  padding: 0;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $Verylightgrayishblue;
 }
 
-.container{
+div {
+    display: inline-block;
+}
+
+.container {
+    background-color: $White;
+    border-radius: 20px;
+    padding: 10px;
+
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    
-    width: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    // height: 80vh;
 
-}
 
-.notif-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-   
-    .notif-title-counter{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 30px;
-        h1{
-    
-        }
-        span{
-    
-        }
-    }
 
-    p{
+    .notif-header {
 
-    }
-}
+        @include flex-default(row, center, space-between);
 
-.notif-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .notif{
-        display: flex;
+        margin: 4px 20px 15px;
 
-        // align-items:flex-start;
-        // justify-content: center;
-        .user-profile{
-            align-self: center;
-            width: 80px;
-            height: 80px;
-        }
+        .notif-title-counter {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
 
-        .notif-info{
-
-            .name-description{
-                display: flex;
-                align-items: center;
-                .name{
-                    margin: 0;
-                    padding: 0;
-                }
-    
-                .post-desc{
-
-                }
-            }
-
-            .post-duration{
+            h1 {
+                @include jakartaFont(800);
+                font-size: 24px;
                 margin: 0;
                 padding: 0;
             }
+
+            span {
+                @include jakartaFont(500);
+                border-radius: 4px;
+                background-color: $Blue;
+                color: white;
+                font-size: 14px;
+                padding: 1px 10px;
+            }
+        }
+
+        p {
+            @include jakartaFont(800);
+            font-size: 13px;
+            cursor: pointer;
+            user-select: none;
         }
     }
+
+    .notif-container {
+        @include flex-default(column, none, center);
+
+        // width: 90%;
+        .notif {
+
+            display: flex;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 4px 20px;
+            justify-content: space-between;
+            align-items: center;
+
+            .commented-picture {
+                display: inline-block;
+                // height: 50%;
+                width: 50px;
+                margin-left: 10px;
+            }
+
+            .commented-picture:hover {
+                border-radius: 8px;
+                pointer-events: fill;
+                box-shadow: 0 0 10px 4px lightgray;
+            }
+
+            .another-container {
+                display: flex;
+                align-items: center;
+
+                .user-profile {
+                    pointer-events: none;
+                    align-self: center;
+                    width: 40px;
+                    height: 40px;
+                }
+
+
+                .notif-info {
+                    margin-left: 10px;
+                    pointer-events: none;
+
+                    .name-description {
+
+                        .name {
+                            @include jakartaFont(500);
+                            margin: 0;
+                            padding: 0;
+                            font-size: 13px;
+                            font-weight: bold;
+                        }
+
+                        .dot {
+                            align-items: center;
+                            background-color: red;
+                            border-radius: 100px;
+                            width: 9px;
+                            height: 9px;
+                            margin-left: 5px;
+                        }
+
+                        .post-desc {
+                            @include jakartaFont(300);
+                            font-size: 12px;
+                            color: $Darkgrayishblue;
+
+                            .club {
+                                pointer-events: fill;
+                                cursor: pointer;
+                                color: black;
+                                font-weight: bold;
+                            }
+
+                            .strat{
+                                font-weight: bold;
+                            }
+
+                            .club:hover {
+                                color: $Blue;
+                            }
+                        }
+                    }
+
+                    .message {
+                        pointer-events: fill;
+                        @include jakartaFont(300);
+                        font-size: 12px;
+                        width: 85%;
+                        // background: $Lightgrayishblue1;
+                        border-radius: 8px;
+                        border: 1px solid lightgrey;
+                        padding: 12px 8px;
+                    }
+
+                    .message:hover{
+                        cursor: pointer;
+                        background-color: $Lightgrayishblue2;
+                    }
+
+                    @media (max-width: 500px) {
+                        .message{
+                            width: 100%;
+                        }
+                    }
+
+                    .post-duration {
+                        color: $Darkgrayishblue;
+                        @include jakartaFont(300);
+                        font-size: 11px;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .notif-read {
+        // background: grey;
+    }
+
+    .notif-unread {
+        background: $Lightgrayishblue1;
+    }
+
+
+    .element-hover {
+        pointer-events: fill;
+        cursor: pointer;
+        font-weight: bold;
+        // color: darkgray;
+    }
+
+
+    .element-hover:hover {
+        color: blue;
+    }
+
 }
 
-.notif-read{
-    background: grey;
-}
-
-.notif-unread{
-    background: pink;
-}
-
-.notif-unread::after{
+@media (max-width: 500px) {
    
-}
+    .container{
+        // display: flex;
+        // background: blue;
+        width: 100%;
+        height: 100vh;
 
+        .notif-header{
+            position: sticky;
+            top: 50px;
 
-.element-hover{
+            .notif-title-counter{
+                gap: 4px;
+                h1{
+                    font-size: 18px;
+                    // margin-right: -10px;
+                }
 
-}
+                span{
+                    font-size: 12px;
+                    padding: 4px 8px;
+                    // height: 10px;   
+                }
 
-.element-hover:hover{
+                p{
+                    font-size: 8px;
+                }
+            }
+        }
 
+        .notif-container{
+            .notif{
+                .commented-picture{
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+        }
+
+    
+    }
 }

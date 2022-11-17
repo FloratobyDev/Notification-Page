@@ -7,6 +7,9 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
   <title>Frontend Mentor | Notifications page</title>
 
@@ -31,56 +34,127 @@
         <h1>Notifications</h1>
         <span>3</span>
       </div>
-      <p>Mark all as read</p>
+      <p class="element-hover">Mark all as read</p>
     </header>
-   
+
     <main class="notif-container" role="main">
-  
+
       <div class="notif notif-unread">
-        <img src="./assets/images/avatar-angela-gray.webp" alt="user-image" class="user-profile">
-        <div class="notif-info">
-          <div class="name-description">
-            <h2 class="name">Mark Webber</h2>
-            <span class="post-desc"> reacted to your recent post My first tournament today!</span>
-          </div> 
-          <p class="post-duration"> 1m ago</p>
+        <div class="another-container">
+          <img src="./assets/images/avatar-mark-webber.webp" alt="user-image" class="user-profile">
+          <div class="notif-info">
+            <div class="name-description">
+              <span class="name element-hover">Mark Webber</span>
+              <span class="post-desc"> reacted to your recent post <span class="element-hover">My first tournament
+                  today!</span> </span>
+              <div class="post-desc-container">
+              </div>
+            </div>
+            <p class="post-duration"> 1m ago</p>
+          </div>
         </div>
       </div>
-  
+
       <div class="notif notif-unread">
-        <img src="" alt="" class="user-profile">
-        <div class="notif-info">
-          <h2 class="name">Mark Webber</h2>
-          <p class="post-desc"> reacted to your recent post My first tournament today!</p>
-          <p class="post-duration"> 1m ago</p>
+        <div class="another-container">
+          <img src="./assets/images/avatar-angela-gray.webp" alt="user-image" class="user-profile">
+          <div class="notif-info">
+            <div class="name-description">
+              <span class="name element-hover">Angela Gray</span>
+              <span class="post-desc">followed you</span>
+              <div class="post-desc-container">
+              </div>
+            </div>
+            <p class="post-duration"> 5m ago</p>
+          </div>
         </div>
       </div>
-  
-      Angela Gray followed you
-      5m ago
-  
-      Jacob Thompson has joined your group Chess Club
-      1 day ago
-  
-      Rizky Hasanuddin sent you a private message
-      5 days ago
-      Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
-      I'm already having lots of fun and improving my game.
-  
-      Kimberly Smith commented on your picture
-      1 week ago
-  
-      Nathan Peterson reacted to your recent post 5 end-game strategies to increase your win rate
-      2 weeks ago
-  
-      Anna Kim left the group Chess Club
-      2 weeks ago
+
+      <div class="notif notif-unread">
+        <div class="another-container">
+          <img src="./assets/images/avatar-jacob-thompson.webp" alt="user-image" class="user-profile">
+          <div class="notif-info">
+            <div class="name-description">
+              <span class="name element-hover">Jacob Thompson</span>
+              <span class="post-desc">has joined your group <span class="club">Chess Club</span></span>
+              <div class="post-desc-container">
+              </div>
+            </div>
+            <p class="post-duration"> 1 day ago</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="notif notif-read">
+        <div class="another-container">
+          <img style="align-self:flex-start;" src="./assets/images/avatar-rizky-hasanuddin.webp" alt="user-image"
+            class="user-profile">
+          <div class="notif-info">
+            <div class="name-description">
+              <span class="name element-hover">Rizky Hasanuddin</span>
+              <span class="post-desc">sent you a private message</span>
+            </div>
+            <p class="post-duration"> 5 days ago</p>
+            <div>
+              <p class="message">Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
+                I'm already having lots of fun and improving my game.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notif notif-read">
+        <div class="another-container">
+          <img src="./assets/images/avatar-kimberly-smith.webp" alt="user-image" class="user-profile">
+          <div class="notif-info">
+            <div class="name-description">
+              <span class="name element-hover">Mark Webber</span>
+              <span class="post-desc">commented on your picture.</span>
+            </div>
+            <p class="post-duration"> 1m ago</p>
+          </div>
+        </div>
+
+        <img class="commented-picture" src="./assets/images/image-chess.webp" alt="img-chess">
+      </div>
+
+      <div class="notif notif-read">
+        <div class="another-container">
+          <img src="./assets/images/avatar-nathan-peterson.webp" alt="user-image" class="user-profile">
+          <div class="notif-info">
+            <div class="name-description">
+              <span class="name element-hover">Jacob Thompson</span>
+              <span class="post-desc">reacted to your recent post
+                <span class="strat">
+                  5 end-game strategies to increase your win rate
+                </span> </span>
+              <div class="post-desc-container">
+              </div>
+            </div>
+            <p class="post-duration"> 2 weeks ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="notif notif-read">
+        <div class="another-container">
+          <img src="./assets/images/avatar-anna-kim.webp" alt="user-image" class="user-profile">
+          <div class="notif-info">
+            <div class="name-description">
+              <span class="name element-hover">Anna Kim</span>
+              <span class="post-desc">left the group
+                <span class="club">
+                  Chess Club
+                </span> </span>
+              <div class="post-desc-container">
+              </div>
+            </div>
+            <p class="post-duration"> 2 weeks ago</p>
+          </div>
+        </div>
+      </div>
     </main>
-  
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
-    </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
