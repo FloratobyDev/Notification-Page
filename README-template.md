@@ -6,7 +6,6 @@ This is a solution to the [Notifications page challenge on Frontend Mentor](http
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -16,10 +15,12 @@ This is a solution to the [Notifications page challenge on Frontend Mentor](http
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
+A simple notification component that accomplished the challenge below with a few small additions: 
+ - clickable notifications that toggles between read/unread states.
+ - 'Mark all as read' changes to 'Mark all as unread' when clicked. The behavior of the button also affects the notification state. 
+ - notification 'unread' state counter updates when the user clicks on a **notification** or the **Mark** button. 
 ### The challenge
 
 Users should be able to:
@@ -29,85 +30,59 @@ Users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-### Screenshot
-
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [**SOLUTION**](https://github.com/FloratobyDev/Notification-Page)
+- Live Site URL: [**LIVE**](https://chipper-rolypoly-91c1bb.netlify.app/)
 
 ## My process
 
+  Read and understood the Challenge.
+  Looked at the design and got an idea of the structure.
+  Analyzed the design and checked for structures that are similar. 
+  Implemented the header section -- notification, counter, and the mark-- text.
+  Implemented the notification base structure and extended it depending upon the type of notification -- text-based, message-based, and picture-based. **OOP** type of thang. 
+  Implemented all behaviors according to the challenge and some with **JQuery**.
+  Setup global styles. 
+  Styled the header section. 
+  Styled the notification container, base nofitications, and extended notifications, in that order. 
+  
+  All styles were implemented through the following process: 
+   1. Positioned parent elements and its children.
+   2. Setup the layout based upon the design.
+   3. Setup the alignment based upon the design.
+   4. Established hierarchy by defining colors and sizes for each element.
+   5. Added the white spaces for a final touch up. 
+
+  
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Desktop-first workflow
+- Live SASS Compiler
+- [SASS](https://sass-lang.com/) - CSS Extension
+- [JQuery](https://jquery.com/) - JS Library
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+ - SASS Live Extension is a lifesaver.
+ - Implementing the **red circle** took more time than expected. At first I tried using the *::after* pseudo-element with a `content: "•"` but that wasn't right because it doesn't vertically center. So my next solution was to program it and add a **DIV element** next to the post description and use CSS to make a red circle. To insert the element, I used JQuery's **after**. It worked, but it sure took some time to figure out. Maybe there's a better idea to implement this but that's what I came up with. 
+ - Trying to find the children of a parent in Jquery also took some time to figure out. This problem occurred when I tried to implement a behavior where the user can click on a notification and the state changes to 'read.' This was not a part of the challenge but it felt like a fun addition, so I did it. Anyways, going back to the topic, I was thinking maybe I could just use **recursion** to find the element that contains my **dot** class but that felt like too much so I tried looking for ways to do it. Then I stumbled upon ` event.target.querySelector('.dot').remove()` and it worked! Basically what this does is query the target's children to see if one of it's descendants contains the `.dot` class. So now, whenever the user clicks on an 'unread' notification, the red disappears with the grayish background.
+ - It was tedious doing the repetitive structure in Pure HTML. React could definitely do it better because components are reusable.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
+I may implement this using ReactJS. We'll see.
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Stack Overflow](https://stackoverflow.com/) - QA website
+- [SASS](https://sass-lang.com/) - CSS Extension
+- [JQuery](https://jquery.com/) - JS Library
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
+- Website - [Michael Mushrush](https://michaelmushrush.tech/)
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thank you Frontend Mentor.
