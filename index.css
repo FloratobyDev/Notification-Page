@@ -3,9 +3,9 @@
 }
 
 body {
+  background-color: hsl(210deg, 60%, 98%);
   margin: 0;
   padding: 0;
-  background-color: hsl(210deg, 60%, 98%);
 }
 
 div {
@@ -15,24 +15,24 @@ div {
 .container {
   background-color: hsl(0deg, 0%, 100%);
   border-radius: 20px;
+  left: 50%;
   padding: 10px;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   width: 40%;
 }
 .container .notif-header {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
   margin: 4px 20px 15px;
 }
 .container .notif-header .notif-title-counter {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: 10px;
 }
 .container .notif-header .notif-title-counter h1 {
@@ -53,18 +53,19 @@ div {
 }
 .container .notif-header p {
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 800;
-  font-size: 13px;
+  font-weight: 300;
+  color: hsl(219deg, 12%, 42%);
   cursor: pointer;
+  font-size: 13px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 .container .notif-container {
+  align-items: none;
   display: flex;
   flex-direction: column;
-  align-items: none;
   justify-content: center;
 }
 .container .notif-container .notif {
@@ -74,24 +75,31 @@ div {
   margin: 4px 20px;
   justify-content: space-between;
   align-items: center;
+  z-index: 5;
 }
-.container .notif-container .notif .commented-picture {
+.container .notif-container .notif .picture-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+}
+.container .notif-container .notif .picture-container .commented-picture {
+  width: 35px;
+  cursor: pointer;
   display: inline-block;
-  width: 50px;
-  margin-left: 10px;
 }
-.container .notif-container .notif .commented-picture:hover {
+.container .notif-container .notif .picture-container:hover {
   border-radius: 8px;
-  pointer-events: fill;
-  box-shadow: 0 0 10px 4px lightgray;
+  box-shadow: inset 0 0 6px 1px lightgrey;
 }
 .container .notif-container .notif .another-container {
   display: flex;
   align-items: center;
+  pointer-events: none;
 }
 .container .notif-container .notif .another-container .user-profile {
-  pointer-events: none;
-  align-self: center;
+  align-self: flex-start;
   width: 40px;
   height: 40px;
 }
@@ -111,8 +119,8 @@ div {
   align-items: center;
   background-color: red;
   border-radius: 100px;
-  width: 9px;
-  height: 9px;
+  width: 6px;
+  height: 6px;
   margin-left: 5px;
 }
 .container .notif-container .notif .another-container .notif-info .name-description .post-desc {
@@ -120,6 +128,7 @@ div {
   font-weight: 300;
   font-size: 12px;
   color: hsl(219deg, 12%, 42%);
+  pointer-events: none;
 }
 .container .notif-container .notif .another-container .notif-info .name-description .post-desc .club {
   pointer-events: fill;
@@ -139,12 +148,14 @@ div {
   font-weight: 300;
   font-size: 12px;
   width: 85%;
+  color: hsl(219deg, 12%, 42%);
   border-radius: 8px;
   border: 1px solid lightgrey;
   padding: 12px 8px;
 }
 .container .notif-container .notif .another-container .notif-info .message:hover {
   cursor: pointer;
+  border: 1px solid transparent;
   background-color: hsl(205deg, 33%, 90%);
 }
 @media (max-width: 500px) {
@@ -169,7 +180,7 @@ div {
   font-weight: bold;
 }
 .container .element-hover:hover {
-  color: blue;
+  color: hsl(219deg, 85%, 26%);
 }
 
 @media (max-width: 500px) {
